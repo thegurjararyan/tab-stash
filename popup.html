@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      width: 280px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a1a;
+      color: #e0e0e0;
+    }
+    
+    h1 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: #fff;
+      text-align: center;
+    }
+    
+    .stats {
+      background: #2a2a2a;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      text-align: center;
+      font-size: 13px;
+      color: #b0b0b0;
+    }
+    
+    .stats strong {
+      color: #fff;
+      font-size: 20px;
+      display: block;
+      margin-bottom: 4px;
+    }
+    
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    
+    button:active {
+      transform: translateY(0);
+    }
+    
+    .primary {
+      background: #5865F2;
+      color: white;
+    }
+    
+    .primary:hover {
+      background: #4752C4;
+    }
+    
+    .secondary {
+      background: #3ba55d;
+      color: white;
+    }
+    
+    .secondary:hover {
+      background: #2d7d46;
+    }
+    
+    .danger {
+      background: #ed4245;
+      color: white;
+    }
+    
+    .danger:hover {
+      background: #c03537;
+    }
+    
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+    
+    .message {
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      margin-top: 12px;
+      text-align: center;
+      animation: fadeIn 0.3s;
+    }
+    
+    .success {
+      background: rgba(59, 165, 93, 0.2);
+      color: #3ba55d;
+      border: 1px solid #3ba55d;
+    }
+    
+    .error {
+      background: rgba(237, 66, 69, 0.2);
+      color: #ed4245;
+      border: 1px solid #ed4245;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🔒 Tab Stash</h1>
+  
+  <div class="stats">
+    <strong id="tabCount">0</strong>
+    <span>tabs stashed</span>
+  </div>
+  
+  <button id="stashBtn" class="primary">💾 Stash Current Tabs</button>
+  <button id="restoreBtn" class="secondary" disabled>📂 Restore Tabs</button>
+  <button id="clearBtn" class="danger" disabled>🗑️ Clear Stash</button>
+  
+  <div id="message"></div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
